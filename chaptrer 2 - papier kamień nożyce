@@ -1,0 +1,44 @@
+# papier kamień nożyce
+
+# importowanie modułu random
+import random
+option = ["papier", "kamień", "nożyce"]
+
+# play a little game...
+print("Zagrajmy w marynarza...")
+print("Do ilu wygranych chcesz zagrać?")
+n = int(input())
+print("Gramy do", n, "zwycięstw. Wygrany jest wygranym, a przegany - przegranym")
+print("Do wyboru są tylko 3 opcje: papier, kamień lub nożyce")
+
+# warunki gry i jej przebieg
+
+my_points = 0
+your_points = 0
+while my_points < n and your_points < n:
+    print("")
+    print("Stan gry:")
+    print("Ty masz:", your_points, "punktów")
+    print("Ja mam:", my_points, "punktów")
+    print("")
+    print("Napisz swój znak, i sprawdzimy kto wygrał...")
+    your_sign = input()
+    my_sign = option[random.randint(0, 2)]
+    print(my_sign)
+    if my_sign == your_sign:
+        print("Remis z ewidentym wskazaniem na mnie")
+        print("________________________________________________________________________________________")
+    elif your_sign not in option:
+        print("Tego znaku nie można użyć. Wybierz jeden z możliwych: papier, kamień lub nożyce")
+    elif (my_sign == option[0] and your_sign == option[1]) or (my_sign == option[1] and your_sign == option[2]) or (my_sign == option[2] and your_sign == option[0]):
+        my_points += 1
+        print("Starałeś się, ale w tym starciu byłem zdecydowanie lepszy")
+        print("________________________________________________________________________________________")
+    else:
+        your_points += 1
+        print("Udało Ci się tym razem")
+        print("________________________________________________________________________________________")
+if my_points == n:
+    print("Ja wygrałem, Ty przegrałeś. HA HA HA")
+else:
+    print("Moje gratulacje! wygrałeś z Randomem :)")
