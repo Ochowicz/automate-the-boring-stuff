@@ -23,7 +23,7 @@ while my_points < n and your_points < n:
     print("")
     print("Napisz swój znak, i sprawdzimy kto wygrał...")
     your_sign = input()
-    my_sign = option[random.randint(0, 2)]
+    my_sign = random.choice(option)
     print(my_sign)
     if my_sign == your_sign:
         print("Remis z ewidentym wskazaniem na mnie")
