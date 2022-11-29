@@ -1,0 +1,20 @@
+spam = ['apples', 'bananas', 'tofu','cats', 'robots', 'king', 'queen']
+def typing_stuff(i):
+    if len(i) > 1:
+        slice = i[0:-2]
+        for item in slice:
+            print(item, end=", ")
+        print(i[-2], end=" and ")
+        print(i[-1])
+    elif len(i) == 1:
+        print(i[0])
+    else:
+        print('')
+
+typing_stuff(spam)
+
+xoxo = ['bananas',]
+typing_stuff(xoxo)
+
+empty_one = [""]
+typing_stuff(empty_one)
